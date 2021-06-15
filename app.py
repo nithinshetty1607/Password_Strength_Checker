@@ -1,6 +1,9 @@
 from flask import Flask,render_template,url_for,request
 import pandas as pd 
 import numpy as np
+from word_divide_char import word_divide_char
+
+word_divide_char = word_divide_char()
 
 import pickle
 
