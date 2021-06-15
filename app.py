@@ -21,6 +21,7 @@ def home():
 
 @app.route('/StrenghChecker',methods=['POST'])
 def StrenghChecker():
+    word_divide_char=word_divide_char()
     loaded_model=pickle.load(open('model.pickle', 'rb'))
     loaded_vecorizer=pickle.load(open('vectorizer.pickle', 'rb'))
     password=''
@@ -42,4 +43,4 @@ def StrenghChecker():
 
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run()
