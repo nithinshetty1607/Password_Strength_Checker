@@ -1,0 +1,20 @@
+
+<html>
+<link rel="stylesheet" href="static/style.css">
+<body>
+
+<h3>PASSWORD STRENGTH CHECKER</h3>
+
+<div>
+  <form action="{{ url_for('StrenghChecker')}}" method="POST">
+    <label for="pass">Enter Password to check the STRENGTH!</label>
+    <input type="text" id="pass" name="pass" placeholder="password">
+
+    
+    <input type="submit" value="StrenghChecker">
+  </form>
+  <h3>Entered password strength is {{ strength }}</h3>
+</div>
+
+</body>
+</html>
