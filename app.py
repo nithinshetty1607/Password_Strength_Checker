@@ -10,8 +10,7 @@ def word_divide_char(inputs):
         characters.append(i)
     return characters
 # load the model from disk
-loaded_model=pickle.load(open('model.pickle', 'rb'))
-loaded_vecorizer=pickle.load(open('vectorizer.pickle', 'rb'))
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -20,6 +19,8 @@ def home():
 
 @app.route('/StrenghChecker',methods=['POST'])
 def StrenghChecker():
+    loaded_model=pickle.load(open('model.pickle', 'rb'))
+    loaded_vecorizer=pickle.load(open('vectorizer.pickle', 'rb'))
     password=''
     password=request.form.get("pass")
     print(password)
@@ -39,4 +40,4 @@ def StrenghChecker():
 
 
 if __name__ == '__main__':
-	app.run()
+	app.run(debug=True)
